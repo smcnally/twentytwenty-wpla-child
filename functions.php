@@ -1,7 +1,18 @@
 <?php
 
+/* Even with explicit blessing, past events & discussions are available only when logged in on Meetup.com. We need other means to persist historical events and to dig into Meetup's API. This from https://github.com/bradp/wordpress-meetup-oembed/blob/master/meetupoembeds.php */
+
+wp_oembed_add_provider('http://www.meetup.com/*','http://api.meetup.com/oembed?url=');
+wp_oembed_add_provider('http://meetup.com/*','http://api.meetup.com/oembed?url=');
+wp_oembed_add_provider('http://www.wpmke.com/*','http://api.meetup.com/oembed?url='); //love to #wpmke
+wp_oembed_add_provider('http://www.mkepug.org/*','http://api.meetup.com/oembed?url=');
+
+/* WP-on-WP oembed needs explicit blessing, too */
+
+wp_oembed_add_provider( 'https://gamepath.io/*', 'https://gamepath.io/' );
+
 /* - 
-Hide all but Contributors' and Authors' own posts from everyone but Editors and Admins
+Hide all but Contributors' and Authors' own posts from everyone but Editors and Admins. Clean by default and can be opted-into per person. 
 */
 
 function query_set_only_author( $wp_query ) {
@@ -25,7 +36,8 @@ function remove_menus(){
 }
 add_action( 'admin_menu', 'remove_menus', 999 );
 
-// REMOVE POST META BOXES - Streamline default writing space
+/* REMOVE POST META BOXES - Streamline default writing space -- Clean by default and can be opted-into per person. */
+
 function remove_my_post_metaboxes() {
   if( ! current_user_can( 'manage_options' ) ) {
     remove_meta_box( 'authordiv','post','normal' ); // Author Metabox
