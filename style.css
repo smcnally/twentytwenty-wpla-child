@@ -1,13 +1,13 @@
 /*
-Theme Name: Twenty Twenty Three Child for LAWP
+Theme Name: Twenty Twenty Child for LAWP
 Theme URI: https://lawp.meanbusiness.com/twentytwentythree-lawp-child/
-description: Twenty Twenty Three Child Theme for LAWP
-Template: twentytwentythree
+description: Twenty Twenty Child Theme for LAWP
+Template: twentytwenty
 Version: 1.0.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: accessibility-ready
-Text Domain: twentytwentythreelawpchild
+Text Domain: twentytwentylawpchild
 */
 
 /* Variables */
@@ -17,4 +17,3 @@ Text Domain: twentytwentythreelawpchild
 	--global--font-primary: var(--font-headings, -apple-system, BlinkMacSystemFont, Ubuntu, "Segoe UI", Roboto, Oxygen-Sans, Cantarell, "Helvetica Neue", sans-serif);
 	--global--font-secondary: var(--font-base, -apple-system, BlinkMacSystemFont, Ubuntu, "Segoe UI", Roboto, Oxygen-Sans, Cantarell, "Helvetica Neue", sans-serif);
 }
-
